@@ -17,7 +17,8 @@ import javafx.scene.control.ComboBox;
 
 public class ViewController1 implements Initializable {
 
-    @FXML ComboBox location_importance;
+    @FXML
+	static ComboBox location_importance;
     @FXML TextField zip_code;
     @FXML ComboBox size_importance;
     @FXML ComboBox size_selected;
@@ -47,5 +48,21 @@ public class ViewController1 implements Initializable {
             stage.show();
         }
     }
+	
+	/*
+	public static void setData(){
+
+		location_importance.getItems().clear();
+
+		location_importance.getItems().addAll(
+		            "0",
+		            "1",
+		            "2",
+		            "3",
+		            "4",
+		            "5");
+
+	}
+	*/
 
 }

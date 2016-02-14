@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.collections.*;
 
 
 public class Main extends Application {
@@ -21,6 +22,7 @@ public class Main extends Application {
 			primaryStage.setTitle("charitABLE");
 			primaryStage.setResizable(false);
 			primaryStage.show();
+			//ViewController1.setData();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
