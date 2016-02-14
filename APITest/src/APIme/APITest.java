@@ -21,12 +21,14 @@ public class APITest {
 		}
 		
 		try{
-			List<SearchCharities> data = parser.searchCharities(token, "1", "10", "SMALL", "", "", "US", "");
+			List<SearchCharities> data = parser.searchCharities(token, "1", "10", "SMALL", "whale", "", "US", "");
 			if(data.get(0).getError().getStatus_code().equals("100")){
 				System.out.println("Data received.");
 				for(int i = 0; i < data.size(); i++){
 					String currCharity = data.get(i).getName();
+					String currCharityType = data.get(i).getDescription();
 					System.out.println(currCharity);
+					System.out.println(currCharityType);
 				}
 			}
 			else {
