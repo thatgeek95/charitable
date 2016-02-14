@@ -32,8 +32,8 @@ public class CharityType {
 		return;
 	}
 	
-	public String getType() {
-		return type;
+	public int getTypeIndex() {
+		return index;
 	}
 	
 	public String toString() {

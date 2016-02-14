@@ -20,6 +20,7 @@ public class ViewController1 implements Initializable {
     @FXML
 	ComboBox location_importance;
     @FXML TextField zip_code;
+    @FXML TextField state;
     @FXML ComboBox size_importance;
     @FXML ComboBox size_selected;
     @FXML Button continue_button;
@@ -38,8 +39,15 @@ public class ViewController1 implements Initializable {
         	//Get all the input!
         	int locimport = location_importance.getSelectionModel().getSelectedIndex();
         	String zipcode = zip_code.getText();
+        	//System.out.println("Zipcode is" + zipcode);
+        	
         	int sizeimport = size_importance.getSelectionModel().getSelectedIndex();
         	int size = size_selected.getSelectionModel().getSelectedIndex();
+        	
+        	String state_id = state.getText();
+        	
+        	Main.user.setSize(size_selected.getSelectionModel().getSelectedItem().toString(), sizeimport);
+        	Main.user.setLoc(zipcode, locimport, state_id);
         	
         	Stage stage; 
             Parent root = null;

@@ -7,8 +7,15 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.collections.*;
 
+import java.util.ArrayList;
+
+import com.charitable.backend.*;
+
 
 public class Main extends Application {
+	
+	public static UserPrefs user = new UserPrefs();
+	public static ArrayList<Charity> final_charities;
 	
 	@Override
 	public void start(Stage primaryStage) {

@@ -53,7 +53,7 @@
                                  </FlowPane.margin>
                               </TextArea>
                               <Label alignment="CENTER" layoutX="10.0" layoutY="64.0" prefHeight="37.0" prefWidth="162.0" text="Location:" />
-                              <TextArea fx:id="location" editable="false" layoutX="172.0" layoutY="63.0" prefHeight="43.0" prefWidth="242.0">
+                              <TextArea fx:id="_location" editable="false" layoutX="172.0" layoutY="63.0" prefHeight="43.0" prefWidth="242.0">
                                  <FlowPane.margin>
                                     <Insets top="5.0" />
                                  </FlowPane.margin>

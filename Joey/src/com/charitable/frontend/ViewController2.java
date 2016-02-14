@@ -21,6 +21,9 @@ import javafx.scene.control.ComboBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+
+import com.charitable.backend.Charity;
+import com.charitable.backend.NPEStuff;
 import com.charitable.frontend.CharityType;
 
 public class ViewController2 implements Initializable{
@@ -53,6 +56,16 @@ public class ViewController2 implements Initializable{
         if(b == continue_button) {
         	
         	CharityType selectedCharity = listoftypes.getSelectionModel().getSelectedItem();
+        	Main.user.setType(selectedCharity.getTypeIndex());
+        	try {
+				ArrayList<Charity> charities = NPEStuff.getChInfo(Main.user.getState(), Integer.toString(Main.user.getType()), Main.user.getLocPref());
+			} catch (Exception e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+        	
+        	//RANK AND SORT HERE
+        	//Put final 5 in Main.final_charities
         	
         	Stage stage; 
             Parent root = null;
