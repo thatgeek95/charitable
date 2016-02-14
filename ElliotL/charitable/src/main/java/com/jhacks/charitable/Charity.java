@@ -1,18 +1,26 @@
 package com.jhacks.charitable;
 
 public class Charity {
-	String name;
-	String zip;
-	String totalAssets;
-	String overhead;
-	String ntee;
+	private String name;
+	private String zip;
+	private String totalAssets;
+	private String ntee;
+	private String revenue;
+	private String funcExp;
+	private String giftsRec;
+	private String grantPaid;
+	private String operExpen;
 
-	public Charity(String n, String z, String assets, String over, String nt) {
+	public Charity(String n, String z, String assets, String nt, String rev, String funEx, String gifRec, String graPai, String operExp) {
 		name = n;
 		zip = z;
 		totalAssets = assets;
-		overhead = over;
 		ntee = nt;
+		revenue = rev;
+		funcExp = funEx;
+		giftsRec = gifRec;
+		grantPaid = graPai;
+		operExpen = operExp;
 	}
 	
 	public String getName() {
@@ -26,15 +34,32 @@ public class Charity {
 	public String getAssets() {
 		return totalAssets;
 	}
-	public String getOverhead() {
-		return overhead;
-	}
+	
 	public String getNtee() {
 		return ntee;
 	}
 	
+	public String getRevenue() {
+		return revenue;
+	}
+	
+	public String getFuncExp() {
+		return funcExp;
+	}
+	
+	public String getGiftsRec() {
+		return giftsRec;
+	}
+	
+	public String getGrantPaid() {
+		return grantPaid;
+	}
+	public String getOperExpen() {
+		return operExpen;
+	}
+	
 	public String toString() {
-		String out = name + " " + zip + " " + totalAssets + " " + overhead + " " + ntee;
+		String out = name + " " + zip + " " + totalAssets + " " + " " + ntee + " " + revenue + " " + funcExp  + " " + giftsRec +  " " + grantPaid +  " " + operExpen;
 		return out;
 	}
 }

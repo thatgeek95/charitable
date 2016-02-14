@@ -23,7 +23,9 @@ public class NPEStuff {
 		Long numpgs = (Long) jb.get("num_pages");
 
 		for(int i = 0; i<numpgs; i++) {
-
+			double numpgsI = numpgs.intValue();
+			double iD = i;
+			System.out.println("On page: " + i + " of " + numpgs + ". " + (iD/numpgsI)*100 + "%");
 			String pgJSON = "https://projects.propublica.org/nonprofits/api/v1/search.json?ntee%5Bid%5D=" + numNtee + "&page=" + i + "&state%5Bid%5D=" + regState;
 			String jsonURL = JSONStuff.readUrl(pgJSON);
 
@@ -34,26 +36,31 @@ public class NPEStuff {
 			
 			for(int j = 0; j<filings.size(); j++) {
 				JSONObject org = (JSONObject) filings.get(j);
-				Long rev = (Long) org.get("totrevenue");
-				double revI = Math.toIntExact(rev);
-				Long exp = (Long) org.get("totfuncexpns");
-				double expI = Math.toIntExact(exp);
-				Long assets = (Long) org.get("totassetsend");
-				double ovh = 0;
-				//revenue check
-				//negative ovh means they spent more than they took in
-				if(rev>0) {
-					ovh = ((revI-expI)/revI)*100.0;
-				}
-				else
-					continue;
+				Long rev = (long) 0;
+				Long funExp = (long) 0;
+				Long assets = (long) 0;
+				Long giftsReceived = (long) 0;
+				Long grantsPaid = (long) 0;
+				Long opExp = (long) 0;
+				if(org.get("totrevenue")!=null)
+					rev = (Long) org.get("totrevenue");
+				if(org.get("totfuncexpns")!=null)
+					funExp = (Long) org.get("totfuncexpns");
+				if(org.get("totassetsend")!=null)
+					assets = (Long) org.get("totassetsend");
+				if(org.get("grscontrgifts")!=null)
+					giftsReceived = (Long) org.get("grscontrgifts");
+				if(org.get("contrpdpbks")!=null)
+					grantsPaid = (Long) org.get("contrpdpbks");
+				if(org.get("totopradmnexpnsa")!=null)
+					opExp = (Long) org.get("totopradmnexpnsa");
 				
 				JSONObject organization = (JSONObject) org.get("organization");
 				String name = (String) organization.get("name");
 				String ZIP = (String) organization.get("zipcode");
 				String ntc = (String) organization.get("ntee_code");
 				
-				out.add(new Charity(name, ZIP, assets.toString(), Double.toString(ovh), ntc));
+				out.add(new Charity(name, ZIP, assets.toString(), ntc, rev.toString(), funExp.toString(), giftsReceived.toString(), grantsPaid.toString(), opExp.toString()));
 			}
 		}
 		
