@@ -24,7 +24,7 @@ public class Charity {
 		grantPaid = graPai;
 		operExpen = operExp;
 		distance = 0.0;
-		rank = 0.1;
+		rank = 0.0;
 	}
 	
 	public String getName() {
