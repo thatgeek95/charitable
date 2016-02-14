@@ -1,4 +1,4 @@
-package APIuseapp;
+package APIme;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class APITest {
 		}
 		
 		try{
-			List<SearchCharities> data = parser.searchCharities(token, "1", "5", "SMALL", "animals", "", "US", "");
+			List<SearchCharities> data = parser.searchCharities(token, "1", "5", "SMALL", "jewish", "", "US", "");
 			if(data.get(0).getError().getStatus_code().equals("100")){
 				System.out.println("Data received.");
 				for(int i = 0; i < data.size(); i++){
