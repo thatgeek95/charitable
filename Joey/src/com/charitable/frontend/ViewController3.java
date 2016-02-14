@@ -35,8 +35,8 @@ public class ViewController3 implements Initializable{
     @FXML
 	private ListView<Charity> results_list;
 	protected ListProperty<Charity> listProperty = new SimpleListProperty<>();
-	
-	int moneytodollar = Integer.parseInt(results_list.getSelectionModel().getSelectedItem().getGrantPaid()) / Integer.parseInt(results_list.getSelectionModel().getSelectedItem().getFuncExp());
+
+	//Double moneytodollar = Double.parseDouble(results_list.getSelectionModel().getSelectedItem().getGrantPaid()) / Double.parseDouble(results_list.getSelectionModel().getSelectedItem().getFuncExp());
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -46,7 +46,7 @@ public class ViewController3 implements Initializable{
 			public void changed(ObservableValue<? extends Charity> observable, Charity old, Charity newOne) {
 				int selectedIndex = results_list.getSelectionModel().getSelectedIndex();
 				name.setText(results_list.getSelectionModel().getSelectedItem().getName());
-				percentused.setText(Integer.toString(moneytodollar));
+				//percentused.setText(Double.toString(moneytodollar));
 				_location.setText(results_list.getSelectionModel().getSelectedItem().getZip());
 				distance.setText(Double.toString(results_list.getSelectionModel().getSelectedItem().getDistance()));
 				percent.setText(Double.toString(results_list.getSelectionModel().getSelectedItem().getRank()));

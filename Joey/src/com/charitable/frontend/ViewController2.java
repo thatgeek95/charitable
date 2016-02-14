@@ -22,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
+import com.charitable.backend.AlgoAndSort;
 import com.charitable.backend.Charity;
 import com.charitable.backend.NPEStuff;
 import com.charitable.frontend.CharityType;
@@ -52,20 +53,50 @@ public class ViewController2 implements Initializable{
     @FXML
     private void handleButtonAction(ActionEvent e) {
     	//System.out.println("Button pushed!");
-		Button b = (Button)e.getSource();
+
+    	Button b = (Button)e.getSource();
         if(b == continue_button) {
         	
         	CharityType selectedCharity = listoftypes.getSelectionModel().getSelectedItem();
         	Main.user.setType(selectedCharity.getTypeIndex());
+        	ArrayList<Charity> charities = null;
         	try {
-				ArrayList<Charity> charities = NPEStuff.getChInfo(Main.user.getState(), Integer.toString(Main.user.getType()), Main.user.getLocPref());
+				charities = NPEStuff.getChInfo(Main.user.getState(), Integer.toString(Main.user.getType()), Main.user.getLocPref());
 			} catch (Exception e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			}
         	
-        	//RANK AND SORT HERE
-        	//Put final 5 in Main.final_charities
+        	AlgoAndSort thingweneed = new AlgoAndSort();
+        	
+        	//thingweneed.giveRank(Main.user, charities.get(0));
+        	//System.out.println(charities.get(0));
+        	
+        	
+        	for(int i = 0; i < charities.size(); i++){
+        		thingweneed.giveRank(Main.user, charities.get(i));
+        	}
+        	
+        	
+        	AlgoAndSort.bubbleSort(charities);
+        	/*
+        	for(int i = 0; i<75; i++){
+        		System.out.println(charities.get(i));
+        	}
+        	*/
+        	
+        	
+        	for(int i = 0; i < 5; i++) {
+        		Charity test = charities.get(i);
+        		//test.getDistance();
+        		try {
+					test.setDistance(Main.user.getLocPref());
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        		Main.final_charities[i] = test;
+        	}
         	
         	Stage stage; 
             Parent root = null;
@@ -78,6 +109,8 @@ public class ViewController2 implements Initializable{
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+            
+            
         }
     }
 
