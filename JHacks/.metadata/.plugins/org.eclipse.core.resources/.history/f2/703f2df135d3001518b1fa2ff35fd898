@@ -1,0 +1,20 @@
+package com.charitable.frontend;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+
+public class ViewController3 {
+
+    @FXML ListView results_list;
+    @FXML TextArea name;
+    @FXML TextArea overhead;
+    @FXML TextArea location;
+    @FXML TextArea distance;
+    @FXML TextArea percent;
+
+
+}
