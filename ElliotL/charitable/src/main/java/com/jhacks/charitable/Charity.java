@@ -10,6 +10,7 @@ public class Charity {
 	private String giftsRec;
 	private String grantPaid;
 	private String operExpen;
+	private double distance;
 
 	public Charity(String n, String z, String assets, String nt, String rev, String funEx, String gifRec, String graPai, String operExp) {
 		name = n;
@@ -21,6 +22,7 @@ public class Charity {
 		giftsRec = gifRec;
 		grantPaid = graPai;
 		operExpen = operExp;
+		distance = 0.0;
 	}
 	
 	public String getName() {
@@ -58,8 +60,20 @@ public class Charity {
 		return operExpen;
 	}
 	
+	public double getDistance() {
+		return distance;
+	}
+	
+	public void setDistance(String iZ) throws Exception {
+		try {
+		distance = MapsStuff.TwoPointsDistance(iZ, getZip());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public String toString() {
-		String out = name + " " + zip + " " + totalAssets + " " + " " + ntee + " " + revenue + " " + funcExp  + " " + giftsRec +  " " + grantPaid +  " " + operExpen;
+		String out = name + " " + zip + " " + totalAssets + " " + " " + ntee + " " + revenue + " " + funcExp  + " " + giftsRec +  " " + grantPaid +  " " + operExpen + " " + distance;
 		return out;
 	}
 }

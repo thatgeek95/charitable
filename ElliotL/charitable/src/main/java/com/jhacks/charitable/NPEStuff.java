@@ -8,7 +8,7 @@ import org.json.simple.parser.JSONParser;
 
 public class NPEStuff {
 
-	public static ArrayList<Charity> getChInfo(String regState, String numNtee) throws Exception {
+	public static ArrayList<Charity> getChInfo(String regState, String numNtee, String userZIP) throws Exception {
 		
 		ArrayList<Charity> out = new ArrayList<Charity>();
 
@@ -61,6 +61,7 @@ public class NPEStuff {
 				String ntc = (String) organization.get("ntee_code");
 				
 				out.add(new Charity(name, ZIP, assets.toString(), ntc, rev.toString(), funExp.toString(), giftsReceived.toString(), grantsPaid.toString(), opExp.toString()));
+				//out.get(out.size()-1).setDistance(userZIP);
 			}
 		}
 		
