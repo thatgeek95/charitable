@@ -18,7 +18,7 @@ import javafx.scene.control.ComboBox;
 public class ViewController1 implements Initializable {
 
     @FXML
-	static ComboBox location_importance;
+	ComboBox location_importance;
     @FXML TextField zip_code;
     @FXML ComboBox size_importance;
     @FXML ComboBox size_selected;
@@ -35,6 +35,12 @@ public class ViewController1 implements Initializable {
     	//System.out.println("Button pushed!");
 		Button b = (Button)e.getSource();
         if(b == continue_button) {
+        	//Get all the input!
+        	int locimport = location_importance.getSelectionModel().getSelectedIndex();
+        	String zipcode = zip_code.getText();
+        	int sizeimport = size_importance.getSelectionModel().getSelectedIndex();
+        	int size = size_selected.getSelectionModel().getSelectedIndex();
+        	
         	Stage stage; 
             Parent root = null;
             stage=(Stage) b.getScene().getWindow();

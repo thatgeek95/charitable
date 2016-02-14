@@ -51,9 +51,6 @@ public class ViewController2 implements Initializable{
     	//System.out.println("Button pushed!");
 		Button b = (Button)e.getSource();
         if(b == continue_button) {
-        	
-        	CharityType selectedCharity = listoftypes.getSelectionModel().getSelectedItem();
-        	
         	Stage stage; 
             Parent root = null;
             stage=(Stage) b.getScene().getWindow();
