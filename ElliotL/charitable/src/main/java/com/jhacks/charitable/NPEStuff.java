@@ -21,8 +21,8 @@ public class NPEStuff {
 
 		//now read
 		Long numpgs = (Long) jb.get("num_pages");
-
-		for(int i = 0; i<numpgs; i++) {
+		//CHANGE BACK TO NUMPGS
+		for(int i = 0; i<3; i++) {
 			double numpgsI = numpgs.intValue();
 			double iD = i;
 			System.out.println("On page: " + i + " of " + numpgs + ". " + (iD/numpgsI)*100 + "%");
