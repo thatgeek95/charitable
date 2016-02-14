@@ -1,6 +1,6 @@
-package com.jhacks.givr;
+package com.jhacks.charitable;
 
-public class givr {
+public class Charitable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
