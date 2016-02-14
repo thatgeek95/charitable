@@ -21,7 +21,7 @@
             </Label>
             <Separator prefHeight="21.0" prefWidth="578.0" />
             <Label alignment="CENTER" prefHeight="38.0" prefWidth="599.0" text="Please select the type of charity you would like to give to." />
-            <ListView fx:id="list-of-types" prefHeight="233.0" prefWidth="584.0">
+            <ListView fx:id="listoftypes" prefHeight="233.0" prefWidth="584.0">
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </VBox.margin>
@@ -31,7 +31,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <Button fx:id="continue-button" mnemonicParsing="false" prefHeight="54.0" prefWidth="651.0" text="Continue  &gt;&gt;&gt;">
+                  <Button fx:id="continue_button" mnemonicParsing="false" prefHeight="54.0" prefWidth="651.0" text="Continue  &gt;&gt;&gt;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>

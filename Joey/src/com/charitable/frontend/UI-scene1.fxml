@@ -24,7 +24,7 @@
             <Separator prefHeight="21.0" prefWidth="578.0" />
             <HBox prefHeight="50.0" prefWidth="641.0">
                <children>
-                  <ComboBox fx:id="location-importance" prefHeight="38.0" prefWidth="642.0" promptText="How important is the location of the charity to you? ">
+                  <ComboBox fx:id="location_importance" prefHeight="38.0" prefWidth="642.0" promptText="How important is the location of the charity to you? ">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -39,12 +39,12 @@
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>
                <children>
-                  <TextField fx:id="zip-code" alignment="CENTER" prefHeight="38.0" prefWidth="642.0" promptText="If you selected a level of importance greater than 0, please enter your zip code." />
+                  <TextField fx:id="zip_code" alignment="CENTER" prefHeight="38.0" prefWidth="642.0" promptText="If you selected a level of importance greater than 0, please enter your zip code." />
                </children>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="641.0">
                <children>
-                  <ComboBox fx:id="size-importance" prefHeight="38.0" prefWidth="642.0" promptText="How important is the size of the charitable organization to you?">
+                  <ComboBox fx:id="size_importance" prefHeight="38.0" prefWidth="642.0" promptText="How important is the size of the charitable organization to you?">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -56,7 +56,7 @@
             </HBox>
             <HBox layoutX="15.0" layoutY="77.0" prefHeight="50.0" prefWidth="641.0">
                <children>
-                  <ComboBox fx:id="size-selected" prefHeight="38.0" prefWidth="642.0" promptText="What size charity would you like to give to?">
+                  <ComboBox fx:id="size_selected" prefHeight="38.0" prefWidth="642.0" promptText="What size charity would you like to give to?">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -72,7 +72,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <Button fx:id="continue-button" mnemonicParsing="false" prefHeight="54.0" prefWidth="651.0" text="Continue  &gt;&gt;&gt;" />
+                  <Button fx:id="continue_button" mnemonicParsing="false" prefHeight="54.0" prefWidth="651.0" text="Continue  &gt;&gt;&gt;" />
                </children>
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />

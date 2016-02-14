@@ -9,8 +9,8 @@ import javafx.scene.control.ListView;
 
 public class ViewController2 {
 
-    @FXML ListView list-of-types;
-    @FXML Button continue-button;
+    @FXML ListView listoftypes;
+    @FXML Button continue_button;
 
 
 }

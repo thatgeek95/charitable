@@ -8,11 +8,11 @@ import javafx.scene.control.ComboBox;
 
 public class ViewController1 {
 
-    @FXML ComboBox location-importance;
-    @FXML TextField zip-code;
-    @FXML ComboBox size-importance;
-    @FXML ComboBox size-selected;
-    @FXML Button continue-event;
+    @FXML ComboBox location_importance;
+    @FXML TextField zip_code;
+    @FXML ComboBox size_importance;
+    @FXML ComboBox size_selected;
+    @FXML Button continue_event;
     
 
 }
