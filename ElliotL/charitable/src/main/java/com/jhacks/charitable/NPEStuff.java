@@ -21,7 +21,6 @@ public class NPEStuff {
 
 		//now read
 		Long numpgs = (Long) jb.get("num_pages");
-		System.out.println(numpgs);
 
 		for(int i = 0; i<numpgs; i++) {
 
@@ -32,7 +31,6 @@ public class NPEStuff {
 			Object pgobj = pgparser.parse(jsonURL);
 			JSONObject pgjb = (JSONObject) pgobj;
 			JSONArray filings = (JSONArray) pgjb.get("filings");
-			System.out.println("bl " + i);
 			
 			for(int j = 0; j<filings.size(); j++) {
 				JSONObject org = (JSONObject) filings.get(j);
@@ -46,7 +44,6 @@ public class NPEStuff {
 				//negative ovh means they spent more than they took in
 				if(rev>0) {
 					ovh = ((revI-expI)/revI)*100.0;
-					System.out.println(i + " " + j + " " + rev + " " + exp + " " + ovh);
 				}
 				else
 					continue;
@@ -59,14 +56,6 @@ public class NPEStuff {
 				out.add(new Charity(name, ZIP, assets.toString(), Double.toString(ovh), ntc));
 			}
 		}
-
-
-		/*JSONArray filings = (JSONArray) jb.get("filings");
-		JSONObject first = (JSONObject) filings.get(0);
-		JSONObject organization = (JSONObject) first.get("organization");
-		String ZIP = (String) organization.get("zipcode");*/
-		
-		//System.out.println(numpgs.toString());
 		
 		return out;
 	}
