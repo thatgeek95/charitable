@@ -5,7 +5,7 @@ A charity search and recommendation application built in Java.
 Built by \#77Hacks at JHacks2016
 
 
-##Team: 
+###Our Team: 
 
 
 * Elliot Linder-- Primary Backend Engineer 
