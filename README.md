@@ -18,3 +18,5 @@ Built by \#77Hacks at [JHacks] (http://jhacksumd.com/) 2016
 
 
 * Hillel Hochsztein and Esther Shimanovich-- Algorithms Designers and Data Analysts
+
+* Ayelet Golubtchik-- Moral Support
