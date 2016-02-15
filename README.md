@@ -1,6 +1,8 @@
-# jhack2016
+# charitABLE
 
 A charity search and recommendation application built in Java. 
+
+Built by \#77Hacks at JHacks2016
 
 
 ##Team: 
