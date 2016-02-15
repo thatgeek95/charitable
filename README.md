@@ -2,7 +2,7 @@
 
 A charity search and recommendation application built in Java. 
 
-Built by \#77Hacks at JHacks2016
+Built by \#77Hacks at [JHacks] (http://jhacksumd.com/) 2016
 
 
 ###Our Team: 
